@@ -1,0 +1,139 @@
+/* Genel gövdeyi düzenliyoruz */
+body {
+  background-color: #141418;
+  color: white;
+  /* margin: 0; */
+  /* padding: 0; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ürün detayları container'ı */
+.product-page {
+  width: 100%;
+  max-width: 1200px; /* Maksimum genişlik */
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Ürün detay düzeni */
+.product-details {
+  background-color: #1b1e2b;
+  box-shadow: 0 0 8px #004466; /* Neon hafif yansıma */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+}
+
+/* Görsel ve ana bilgilerin düzeni */
+.product-main-info {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.product-image-container {
+  flex: 1;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.product-info {
+  flex: 1;
+  position: relative;
+}
+
+.product-name {
+  position: absolute;
+  top: 50%;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #00aaff; /* Farlarla uyumlu neon mavi */
+  text-shadow: 0 0 8px #0088cc; /* Hafif neon efekti */
+}
+
+.price {
+  position: absolute;
+  bottom: 0;
+}
+.buy-button {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #141418;
+  background-color: #00aaff;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 8px #00aaff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s, transform 0.3s;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+
+.buy-button:hover {
+  background-color: #0088cc;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #00aaff;
+}
+
+.product-model,
+.product-price {
+  font-size: 1.2rem;
+  opacity: 0.7;
+}
+
+/* Alt bilgiler kısmı (Tabloyu düzenliyoruz) */
+/* Alt bilgiler kısmı (Tabloyu düzenliyoruz) */
+.product-additional-info {
+  margin-top: 2rem;
+}
+
+.product-info-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.product-info-table td {
+  padding: 8px 12px;
+  border: 1px solid #555;
+  text-align: left;
+}
+tr td:nth-child(even) {
+  color: #ffffff; /* Beyaza geçiş */
+  text-shadow: 0 0 12px #00aaff; /* Neon efekti hover'da artar */
+}
+tr td:nth-child(odd) {
+  color: #00aaff; /* Farlarla uyumlu neon mavi */
+  text-shadow: 0 0 8px #0088cc; /* Hafif neon efekti */
+}
+
+.product-info-table tr:nth-child(even) {
+  background-color: #1b1e2b;
+}
+
+.product-info-table tr:nth-child(odd) {
+  background-color: #292f3d; /* Biraz daha açık gri-siyah */
+}
+
+.product-info-table tr:hover {
+  background-color: #2d3243; /* Hover durumunda daha belirgin bir gri */
+}
+
+/* Küçük ekranlar için responsive düzen */
+@media (max-width: 768px) {
+  .product-main-info {
+    flex-direction: column; /* Dikey dizilim */
+  }
+
+  .product-image-container,
+  .product-info {
+    flex: 1 1 100%; /* Her şey %100 genişlikte olacak şekilde alt alta dizilecek */
+  }
+}

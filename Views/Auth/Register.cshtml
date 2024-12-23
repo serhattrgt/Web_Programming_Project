@@ -1,0 +1,52 @@
+@model RegisterViewModel
+
+@{
+  Layout = null;
+}
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#1885ed">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/Register.css">
+
+    <title>Free Login HTML Page Temlate</title>
+</head>
+
+<body>
+<!--ring div starts here-->
+<div class="ring">
+  <i style="--clr:#2043a1;"></i>
+  <i style="--clr:#fefeff;"></i>
+  <i style="--clr:#2043a1;"></i>
+  <div class="login">
+    <h2>Register</h2>
+    <form method="post" asp-controller="Auth" asp-action="Register">
+      <div asp-validation-summary="ModelOnly"  style="color:orangered"></div>
+        <div class="inputBx">
+      <input asp-for="Name" type="text" placeholder="Name">
+        </div>
+        <span asp-validation-for="Name"  style="color:orangered"></span>
+    <div class="inputBx">
+      <input asp-for="Surname" type="text" placeholder="Surname">
+    </div>
+    <span asp-validation-for="Surname"  style="color:orangered"></span>
+    <div class="inputBx">
+      <input asp-for="UserName" type="text" placeholder="Username">
+    </div>
+    <span asp-validation-for="UserName"  style="color:orangered"></span>
+    <div class="inputBx">
+      <input asp-for="Password" type="password" placeholder="Password">
+    </div>
+    <span asp-validation-for="Password" style="color:orangered"></span>
+    <div class="inputBx">
+      <input type="submit" value="Sign up">
+    </div>
+    </form>
+    <div class="links">
+      <a href="/Auth/Login">Log in</a>
+    </div>
+  </div>
+</div>
+<!--ring div ends here-->
+</body>            

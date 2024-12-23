@@ -1,0 +1,54 @@
+
+<title>Payment Page</title>
+<link rel="stylesheet" href="~/css/Payment.css">
+
+
+<section>
+
+
+<h1>Payment</h1>
+<form id="payment-form">
+    <div class="form-group">
+        <label for="nameSurname">Card Holder Name</label>
+        <input type="text" id="nameSurname" placeholder="Full Name" required />
+    </div>
+    <div class="form-group">
+        <label for="cardNumber">Credit Card Number</label>
+        <input type="text" id="cardNumber" placeholder="**** **** **** ****" maxlength="19" required />
+    </div>
+    <div class="form-group">
+        <label for="expiryDate">Expiration Date</label>
+        <input type="text" id="expiryDate" placeholder="MM/YY" maxlength="5" required />
+    </div>
+    <div class="form-group">
+        <label for="cvv">CVV</label>
+        <input type="text" id="cvv" placeholder="***" maxlength="3" required />
+    </div>
+    <button type="submit" class="submit-button">Complete Payment</button>
+</form>
+
+
+
+
+
+    <div id="popup" style="display:none;">
+        <p>Payment Completed!</p>
+    </div>
+
+
+
+</section>
+
+<script>
+    const form = document.getElementById('payment-form');
+    form.onsubmit = function(event) {
+        event.preventDefault();
+
+        const popup = document.getElementById('popup');
+        popup.style.display = 'block';
+
+        setTimeout(function() {
+            window.location.href = '/Order/CreateOrder';
+        }, 2000);
+    }
+</script>

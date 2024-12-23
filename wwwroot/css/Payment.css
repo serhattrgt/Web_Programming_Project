@@ -1,0 +1,88 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #141418;
+  color: #e0e0e0;
+  overflow-x: hidden;
+}
+
+section {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: #1b1e2b; /* Koyu mavi arka plan */
+  box-shadow: 0 0 8px #004466; /* Neon mavi gölge */
+  border-radius: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #00aaff; /* Neon mavi yazı rengi */
+  text-shadow: 0 0 8px #0088cc; /* Hafif neon mavi efekti */
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: #00aaff; /* Neon mavi yazı rengi */
+  text-shadow: 0 0 8px #0088cc; /* Hafif neon mavi efekti */
+  color: #e0e0e0;
+}
+
+input {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  border: 1px solid #555;
+  background-color: #141418;
+  color: #f0f0f5;
+  margin-bottom: 10px;
+  letter-spacing: 2px; /* Daha gerçekçi bir kart numarası görünümü için boşluk eklenmiş */
+}
+
+input:focus {
+  box-shadow: 0 0 8px #004466; /* Neon hafif yansıma */
+}
+
+.submit-button {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.3rem;
+  color: #141418;
+  background-color: #00aaff;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #0088cc;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #00aaff;
+}
+
+#popup {
+  display: none;
+  text-align: center;
+  padding: 20px;
+  background-color: #252525;
+  color: #ffa726;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  margin-top: 20px;
+}
+
+#popup p {
+  margin: 0;
+}

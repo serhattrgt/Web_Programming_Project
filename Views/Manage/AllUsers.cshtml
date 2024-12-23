@@ -1,0 +1,59 @@
+@model IEnumerable<ManageUserViewModel>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kullanıcılar</title>
+    <link rel="stylesheet" href="~/css/AllUsers.css">
+</head>
+<body>
+    <section>
+        <h1>User List</h1>
+        <div class="user-cards">
+            @foreach (var user in Model)
+            {
+                if(User.Identity!.Name != user.UserName){
+                    <div class="user-card">
+                    <div class="profile">
+                        <div class="profile-image">
+                            <img src="~/images/Avatar.png" alt="Profil Resmi bulunmamaktadır">
+                        </div>
+                        <div class="profile-info">
+                            <p><strong>Name:</strong> @user.Name</p>
+                            <p><strong>Surname:</strong> @user.Surname</p>
+                            <p><strong>Username:</strong> @user.UserName</p>
+                            <p><strong>Address:</strong> @user.OpenAdress</p>
+                            <p><strong>Roles:</strong> @string.Join(", ", user.Roles.Select(r => r.RoleName))</p>
+                            <p><strong>Number of Orders:</strong> @user.OrderCount</p>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <a  class="delete-button" asp-controller="Manage" asp-action="Delete" asp-route-userId=@user.UserID>Delete</a>
+                    </div>
+                </div>
+                }
+            }
+        </div>
+        
+        <div class="pagination">
+            @if (ViewBag.CurrentPage > 1)
+            {
+                <a asp-controller="Manage" asp-action="AllUsers" asp-route-page="@(ViewBag.CurrentPage - 1)">Previous</a>
+            }
+            
+            <span>Page @ViewBag.CurrentPage / @ViewBag.TotalPages</span>
+            
+            @if (ViewBag.CurrentPage < ViewBag.TotalPages)
+            {
+                <a asp-controller="Manage" asp-action="AllUsers" asp-route-page="@(ViewBag.CurrentPage + 1)">next</a>
+            }
+        </div>
+
+    </section>
+
+
+
+
+</body>
+</html>

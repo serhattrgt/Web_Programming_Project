@@ -1,0 +1,106 @@
+.container {
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.header1 {
+  min-height: 92vh;
+  min-width: 100%;
+  position: relative;
+  background-image: linear-gradient(
+      rgba(34, 34, 34, 0.6),
+      rgba(34, 34, 34, 0.6)
+    ),
+    url("/img/5.jpg");
+
+  background-size: cover; /* Resmi orantılı şekilde ekranın tamamına sığdırır */
+  background-position: center;
+  color: #fff;
+}
+.header2 {
+  min-height: 92vh;
+  min-width: 100%;
+  position: relative;
+  background-image: linear-gradient(
+      rgba(34, 34, 34, 0.6),
+      rgba(34, 34, 34, 0.6)
+    ),
+    url("/img/6.jpg");
+
+  background-size: cover; /* Resmi orantılı şekilde ekranın tamamına sığdırır */
+  background-position: center;
+  color: #fff;
+}
+.header3 {
+  min-height: 92vh;
+  min-width: 100%;
+  position: relative;
+  background-image: linear-gradient(
+      rgba(34, 34, 34, 0.6),
+      rgba(34, 34, 34, 0.6)
+    ),
+    url("/img/7.jpg");
+
+  background-size: cover; /* Resmi orantılı şekilde ekranın tamamına sığdırır */
+  background-position: center;
+  color: #fff;
+}
+
+.header-container {
+  width: 1200px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+}
+.header-container2 {
+  width: 1200px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+}
+
+.header-container-inner {
+  width: 50%;
+}
+.header-container-inner2 {
+  width: 50%;
+  transform: translate(100%, 0);
+}
+
+h1 {
+  font-size: 52px;
+  margin-bottom: 32px;
+  line-height: 1.05;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 48px;
+}
+
+.btn:link,
+.btn:visited {
+  font-size: 20px;
+  font-weight: 600;
+  background-color: #1c2d6f;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  padding: 16px 32px;
+  border-radius: 9px;
+}
+
+h2 {
+  font-size: 44px;
+  margin-bottom: 48px;
+}
+
+section {
+  padding: 96px 0;
+  background-color: #f7f7f7;
+}

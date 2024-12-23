@@ -1,0 +1,122 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #141418;
+}
+
+.cart-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #1b1e2b;
+  box-shadow: 0 0 8px #004466; /* Neon hafif yansıma */
+  border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
+  color: #00aaff; /* Farlarla uyumlu neon mavi */
+  text-shadow: 0 0 8px #0088cc; /* Hafif neon efekti */
+  margin-bottom: 20px;
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.cart-table th,
+.cart-table td {
+  padding: 10px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-table th {
+  background-color: #141418;
+  color: #00aaff; /* Farlarla uyumlu neon mavi */
+  text-shadow: 0 0 8px #0088cc; /* Hafif neon efekti */
+  font-weight: bold;
+}
+
+.cart-table tr:hover {
+  background-color: #004466;
+}
+
+.remove-btn {
+  background-color: #ff5c5c;
+  box-shadow: 0 0 8px #004466; /* Neon hafif yansıma */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.remove-btn:hover {
+  background-color: #ff1c1c;
+  box-shadow: 0 0 10px #004466; /* Neon hafif yansıma */
+}
+
+.cart-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clear-cart-btn,
+.checkout-btn {
+  color: #141418;
+  background-color: #00aaff;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 8px #00aaff;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.clear-cart-btn:hover {
+  background-color: #0088cc;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #00aaff;
+}
+
+.checkout-btn:hover {
+  background-color: #0088cc;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #00aaff;
+}
+
+.empty-cart {
+  text-align: center;
+  color: #999;
+  font-size: 18px;
+}
+
+.quantity-btn {
+  background-color: #141418;
+  color: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.quantity-btn:hover {
+  background-color: #141418;
+}
+
+.remove-btn {
+  background-color: #ff4d4d;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  background-color: #ff1a1a;
+}

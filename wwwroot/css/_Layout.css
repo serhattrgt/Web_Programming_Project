@@ -1,0 +1,107 @@
+﻿* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  background-color: #141418; /* Arka planı koyu gri-mavi yaptım */
+  color: #ffffff; /* Metin rengi */
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  min-width: 100%;
+  height: 8vh;
+  font-size: 1rem;
+  font-weight: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1b1e2b; /* Koyu arka plan */
+  z-index: 2;
+  color: #00aaff; /* Neon mavi tonları */
+  box-shadow: 0 0 12px #00aaff; /* Hafif neon efekti */
+  opacity: 0.9;
+}
+
+.logo {
+  margin-left: 5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00aaff;
+  text-shadow: 0 0 8px #00aaff; /* Neon efekti */
+}
+
+.logo a {
+  text-decoration: none;
+  color: #00aaff;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.logo a:hover,
+.logo a:focus {
+  color: #ffffff; /* Beyaza geçiş */
+  text-shadow: 0 0 12px #00aaff; /* Neon efekti hover'da artar */
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+ul li {
+  padding: 0 2rem;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #00aaff; /* Neon mavi renk */
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+ul li a:hover,
+ul li a:focus {
+  color: #ffffff; /* Beyaza geçiş */
+  text-shadow: 0 0 12px #00aaff; /* Neon efekti hover'da artar */
+}
+
+ul li:last-child {
+  padding-right: 4rem;
+}
+
+select {
+  appearance: none;
+  font-size: 1rem;
+  background-color: transparent;
+  color: #00aaff; /* Neon mavi */
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid #00aaff; /* Neon sınır */
+  padding: 0.5rem 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+select:hover,
+select:focus {
+  border-color: #0088cc; /* Daha koyu mavi hover rengi */
+  box-shadow: 0 0 8px #00aaff; /* Hafif neon efekti */
+  outline: none;
+}
+
+select option {
+  background-color: #1b1e2b;
+  color: #ffffff;
+}
+
+::selection {
+  background-color: #00aaff; /* Neon mavi arka plan */
+  color: #141418; /* Siyah metin rengi */
+  box-shadow: 0 0 10px #00aaff, 0 0 20px #00aaff, 0 0 30px #00aaff,
+    0 0 40px #00aaff;
+}

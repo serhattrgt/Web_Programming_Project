@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="~/css/Details.css">
+@model Product
+
+<div class="product-page">
+  <section class="product-details">
+    <div class="product-container">
+
+
+      <div class="product-main-info">
+        <div class="product-image-container">
+          <img src=@Model.Image alt="Vehicle Image" class="product-image" />
+        </div>
+        <div class="product-info">
+          <h1 class="product-name">@Model.ProductName</h1>
+          <div class="Buy">
+            <div class="price">
+
+            <h3 class="product-price">Price : @Model.Price</p>
+          </div>
+            <a asp-controller="Order" asp-action="Buy" asp-route-productID ="@Model.ProductID" class="buy-button">Satın al</a>
+          </div>
+        </div>
+      </div>
+      
+
+      <div class="product-additional-info">
+        <table class="product-info-table">
+          <tr>
+            <td>Brand</td>
+            <td>@Model.Brand</td>
+          </tr>
+          <tr>
+            <td>Model</td>
+            <td>@Model.Model</td>
+          </tr>
+          <tr>
+            <td>Color</td>
+            <td>@Model.Color</td>
+          </tr>
+          <tr>
+            <td>Top Speed</td>
+            <td>@Model.TopSpeed</td>
+          </tr>
+          <tr>
+            <td>Fuel Consume</td>
+            <td>@Model.FuelConsume</td>
+          </tr>
+          <tr>
+            <td>Description</td>
+            <td>@Model.Description</td>
+          </tr><tr>
+            <td>Stock Amount</td>
+            <td>@Model.StockAmount</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>

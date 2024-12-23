@@ -1,0 +1,122 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #141418; /* Koyu arka plan */
+  color: #e0e0e0; /* Açık gri yazı rengi */
+  overflow-x: hidden;
+}
+
+section {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 40px;
+  border-radius: 20px;
+  background-color: #1b1e2b; /* Koyu mavi arka plan */
+  box-shadow: 0 0 8px #004466; /* Neon mavi gölge */
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.profile-image img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #00aaff; /* Neon mavi kenarlık */
+  box-shadow: 0 0 10px #00aaff, 0 0 20px #0077cc; /* Neon mavi ve daha açık mavi yansıma */
+}
+
+.profile-info {
+  flex-grow: 1;
+  color: #00aaff; /* Neon mavi yazı rengi */
+  text-shadow: 0 0 8px #0088cc; /* Hafif neon mavi efekti */
+  font-size: 1.4rem;
+  line-height: 2;
+}
+
+/* Butonlar */
+.buttons {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.update-button,
+.delete-button {
+  padding: 15px 30px;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #141418; /* Koyu renk yazı */
+  background-color: #00aaff; /* Neon mavi */
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 8px #00aaff; /* Neon mavi gölge */
+  font-weight: bold;
+}
+
+.update-button {
+  background-color: #2196f3; /* Mavi renk */
+  color: #fff;
+}
+
+.update-button:hover {
+  background-color: #64b5f6; /* Hover rengi */
+}
+
+.delete-button {
+  background-color: #d32f2f; /* Kırmızı */
+  color: #fff;
+}
+
+.delete-button:hover {
+  background-color: #f44336; /* Hover kırmızı */
+}
+
+/* Tablo tasarımı */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+  background-color: #252525; /* Koyu gri arka plan */
+  color: #e0e0e0; /* Yazı rengi */
+}
+
+table th,
+table td {
+  padding: 20px;
+  text-align: left;
+  border-bottom: 1px solid #444;
+  font-size: 1.3rem;
+  background-color: #1b1e2b;
+  color: #00aaff; /* Farlarla uyumlu neon mavi */
+  text-shadow: 0 0 8px #0088cc; /* Hafif neon efekti */
+}
+
+table th {
+  background-color: #1b1e2b;
+  color: #00aaff; /* Farlarla uyumlu neon mavi */
+  text-shadow: 0 0 8px #0088cc; /* Hafif neon efekti */
+  font-size: 1.4rem;
+}
+
+table tr:hover {
+  background-color: #333;
+}
+
+/* Linkler */
+a {
+  color: #00aaff; /* Farlarla uyumlu neon mavi */
+  text-shadow: 0 0 8px #0088cc; /* Hafif neon efekti */
+  text-decoration: none;
+}
+a:hover {
+  color: #ffffff; /* Beyaza geçiş */
+  text-shadow: 0 0 12px #00aaff; /* Neon efekti hover'da artar */
+}

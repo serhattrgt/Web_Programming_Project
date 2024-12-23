@@ -1,0 +1,70 @@
+@model List<MyCartItem>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cart</title>
+    <link rel="stylesheet" href="~/css/Mycart.css">
+</head>
+<body>
+    <div class="cart-container">
+        <h1>My Cart</h1>
+        <div asp-validation-summary="ModelOnly"></div>
+        @if (Model != null && Model.Any())       
+        {
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Total Price</th>
+                        <th>Transactions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var cartItem in Model)
+                    {
+                        <tr>
+                            <td>@cartItem.ProductName</td>
+                            <td>
+                                <form method="get" action="/Cart/DecreaseQuantity" style="display: inline;">
+                                    <input type="hidden" name="ProductId" value="@cartItem.ProductID" />
+                                    <button type="submit" class="quantity-btn">-</button>
+                                </form>
+                                @cartItem.Quantity
+                                <form method="get" action="/Cart/IncreaseQuantity" style="display: inline;">
+                                    <input type="hidden" name="ProductId" value="@cartItem.ProductID" />
+                                    <button type="submit" class="quantity-btn">+</button>
+                                </form>
+                            </td>
+                            <td>@(cartItem.TotalPrice)₺</td>
+                            <td>
+                                <form method="get" action="/Cart/RemoveFromCart">
+                                    <input type="hidden" name="ProductId" value="@cartItem.ProductID" />
+                                    <button type="submit" class="remove-btn">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+            <div class="cart-actions">
+                <a href="/Cart/ClearCart" class="clear-cart-btn">clear cart</a>
+                @if(User.Identity.IsAuthenticated){
+                    <a href="/Order/Payment" class="checkout-btn">Buy</a>
+                }else{
+                    <a href="/Auth/Login" class="checkout-btn">Buy</a>
+                }
+                
+            </div>
+        }
+        else
+        {
+            <p class="empty-cart">There are no items in your cart.</p>
+        }
+    </div>
+</body>
+</html>

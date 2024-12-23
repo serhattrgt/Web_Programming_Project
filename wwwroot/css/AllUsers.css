@@ -1,0 +1,160 @@
+/* Genel Ayarlar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #141418; /* Koyu siyah-mavi arka plan */
+  color: #e0e0e0; /* Yazı rengi */
+  overflow-x: hidden;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  color: #00aaff; /* Farlarla uyumlu neon mavi */
+  text-shadow: 0 0 8px #0088cc; /* Hafif neon efekti */
+}
+
+/* Kullanıcı Kartlarını Tutacak Grid Alan */
+.user-cards {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(500px, 1fr)
+  ); /* Responsive grid */
+  gap: 20px; /* Kartlar arası boşluk */
+  padding: 20px;
+}
+
+/* Her Bir Kullanıcı Kartı */
+.user-card {
+  padding: 20px;
+  background-color: #1b1e2b; /* Kart arka planı */
+  border-radius: 15px; /* Köşeleri yuvarlak */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 10px #004466; /* Neon benzeri gölge */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animasyon */
+}
+
+.user-card:hover {
+  transform: translateY(-10px); /* Kart yükselir */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.8), 0 0 15px #00aaff; /* Daha belirgin neon */
+}
+
+/* Profil Bilgileri */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Profil resmi ve bilgileri arasındaki boşluk */
+  margin-bottom: 20px;
+}
+
+.profile-image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* Yuvarlak resim */
+  object-fit: cover; /* Resim kırpma */
+  border: 3px solid #00aaff; /* Neon kenarlık */
+  box-shadow: 0 0 5px #00aaff, 0 0 10px #0077cc; /* Neon yansıma */
+}
+
+.profile-info p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #e0e0e0; /* Yazı rengi */
+}
+
+.profile-info p strong {
+  color: #00aaff; /* Farlarla uyumlu neon mavi */
+  text-shadow: 0 0 8px #0088cc; /* Hafif neon efekti */
+}
+
+/* Butonlar */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.delete-button {
+  text-decoration: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease; /* Hover animasyonu */
+  font-weight: bold;
+  background-color: #d32f2f;
+  color: #fff;
+  box-shadow: 0 0 10px #ff3d3d; /* Kırmızı neon */
+}
+
+.delete-button:hover {
+  background-color: #f44336;
+  transform: scale(1.05); /* Hafif büyüme */
+  box-shadow: 0 0 15px #ff4d4d, 0 0 25px #ff0000; /* Daha parlak kırmızı neon */
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  gap: 10px;
+}
+
+.pagination a {
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #141418;
+  background-color: #00aaff;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 8px #00aaff;
+}
+
+.pagination a:hover {
+  background-color: #0088cc;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #00aaff;
+}
+
+.pagination a.previous,
+.pagination a.next {
+  font-weight: bold;
+}
+
+.pagination .active {
+  background-color: #0088cc;
+  color: #ffffff;
+  pointer-events: none;
+  box-shadow: 0 0 12px #00aaff;
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+  .profile {
+    flex-direction: column; /* Mobilde dikey düzen */
+    align-items: flex-start;
+  }
+
+  .profile-image img {
+    width: 80px;
+    height: 80px; /* Küçük resim */
+  }
+
+  .buttons {
+    flex-direction: column; /* Butonlar alt alta */
+    gap: 10px;
+  }
+}

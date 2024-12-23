@@ -1,0 +1,159 @@
+@model VehicleFilterViewModel
+
+@{
+    ViewData["Title"] = "Araçları Yönet";
+}
+<h2 class="page-title">@ViewData["Title"]</h2>
+
+
+<link rel="stylesheet" href="~/css/AllVehicles.css">
+
+
+<form method="get" asp-controller="Vehicle" asp-action = "AllVehicles" class="search-form">
+    <input type="text" name="searchQuery" value="@Model.SearchQuery" placeholder="Ara..." class="search-input" />
+    <button type="submit" class="search-button">Search</button>
+</form>
+
+
+
+
+<form method="get" asp-controller="Vehicle" asp-action="AllVehicles" class="category-form">
+    <select name="categoryID" class="category-select" id="categorySelect">
+        <option value="">AllUsers Categories</option>
+        @foreach (var category in Model.Categories)
+        {
+            <option value="@category.CategoryID" data-category-id="@category.CategoryID">
+                @category.CategoryName
+            </option>
+        }
+    </select>
+    <button type="submit" class="category-button">Filter</button>
+</form>
+
+
+
+
+
+@if (Model.Vehicles.Any(v => v.Category.CategoryName == "Motorcycles"))
+{
+    <section>
+        <div><h2>MotorCycles</h2></div>
+        <div class="vehicle-list">
+            @foreach (var vehicle in Model.Vehicles.Where(v => v.Category.CategoryName == "Motorcycles") )
+            {
+               
+                    <div class="vehicle-card">
+                    <img src=@vehicle.Image alt="@vehicle.ProductName" class="vehicle-image" />
+                    <div class="vehicle-info">
+                        <h3 class="vehicle-name">@vehicle.ProductName</h3>
+                        <p class="vehicle-category">@vehicle.Category.CategoryName</p>
+                        <div>
+                            <a asp-controller="Cart" asp-action="AddToCart" asp-route-productID="@vehicle.ProductID" class="vehicle-details-button">Add To Cart</a>
+                            <a asp-controller="Vehicle" asp-action="Details" asp-route-itemid="@vehicle.ProductID" class="vehicle-details-button">Details</a>
+                        <a asp-controller="Order" asp-action="Buy" asp-route-productID="@vehicle.ProductID" class="vehicle-details-button">Buy</a>
+                        @if(User.IsInRole("Admin")||User.IsInRole("Seller")){
+                            <a asp-controller="Vehicle" asp-action="Edit" asp-route-itemid="@vehicle.ProductID" class="vehicle-details-button">Edit</a>
+                            <a asp-controller="Vehicle" asp-action="Delete" asp-route-itemid="@vehicle.ProductID" class="vehicle-details-button" style="background-color: orangered;">Delete</a>
+                        }
+                        </div>
+                    </div>
+                </div>
+                
+            }
+        </div>
+    </section>
+}
+
+@if (Model.Vehicles.Any(v => v.Category.CategoryName == "Electric Cars"))
+{
+    <section>
+        <div><h2>Electric Cars</h2></div>
+        <div class="vehicle-list">
+            @foreach (var vehicle in Model.Vehicles.Where(v => v.Category.CategoryName == "Electric Cars"))
+            {
+               
+                    <div class="vehicle-card">
+                    <img src=@vehicle.Image alt="@vehicle.ProductName" class="vehicle-image" />
+                    <div class="vehicle-info">
+                        <h3 class="vehicle-name">@vehicle.ProductName</h3>
+                        <p class="vehicle-category">@vehicle.Category.CategoryName</p>
+                        <div>
+                            <a asp-controller="Cart" asp-action="AddToCart" asp-route-productID="@vehicle.ProductID " class="vehicle-details-button">Add To Cart</a>
+                           <a asp-controller="Vehicle" asp-action="Details" asp-route-itemid="@vehicle.ProductID" class="vehicle-details-button">Details</a> 
+                        <a asp-controller="Order" asp-action="Buy" asp-route-productID="@vehicle.ProductID"class="vehicle-details-button">Buy</a>
+                        @if(User.IsInRole("Admin")||User.IsInRole("Seller")){
+                            <a asp-controller="Vehicle" asp-action="Edit" asp-route-itemid="@vehicle.ProductID" class="vehicle-details-button">Edit</a>
+                            <a asp-controller="Vehicle" asp-action="Delete" asp-route-itemid="@vehicle.ProductID" class="vehicle-details-button" style="background-color: orangered;">Delete</a>
+                        }
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            }
+        </div>
+    </section>
+}
+
+@if (Model.Vehicles.Any(v => v.Category.CategoryName == "Sport Cars"))
+{
+    <section>
+        <div><h2>Sport Cars</h2></div>
+        <div class="vehicle-list">
+            @foreach (var vehicle in Model.Vehicles.Where(v => v.Category.CategoryName == "Sport Cars"))
+            {
+                
+                    <div class="vehicle-card">
+                    <img src=@vehicle.Image alt="@vehicle.ProductName" class="vehicle-image" />
+                    <div class="vehicle-info">
+                        <h3 class="vehicle-name">@vehicle.ProductName</h3>
+                        <p class="vehicle-category">@vehicle.Category.CategoryName</p>
+                        <div>
+                            <a asp-controller="Cart" asp-action="AddToCart" asp-route-productID="@vehicle.ProductID" class="vehicle-details-button">Add To Cart</a>
+                            <a asp-controller="Vehicle" asp-action="Details" asp-route-itemid="@vehicle.ProductID" class="vehicle-details-button">Details</a>
+                         <a asp-controller="Order" asp-action="Buy" asp-route-productID="@vehicle.ProductID"class="vehicle-details-button">Buy</a>
+                         @if(User.IsInRole("Admin")||User.IsInRole("Seller")){
+                            <a asp-controller="Vehicle" asp-action="Edit" asp-route-itemid="@vehicle.ProductID" class="vehicle-details-button">Edit</a>
+                            <a asp-controller="Vehicle" asp-action="Delete" asp-route-itemid="@vehicle.ProductID" class="vehicle-details-button" style="background-color: orangered;">Delete</a>
+                        }
+                        </div>
+                       
+                    </div>
+                </div>
+            }
+        </div>
+    </section>
+}
+
+<div class="pagination">
+            @if (ViewBag.CurrentPage > 1)
+            {
+                <a asp-controller="Vehicle" asp-action="AllVehicles" asp-route-page="@(ViewBag.CurrentPage - 1)">Previous</a>
+            }
+            
+            <span>Page @ViewBag.CurrentPage / @ViewBag.TotalPages</span>
+            
+            @if (ViewBag.CurrentPage < ViewBag.TotalPages)
+            {
+                <a asp-controller="Vehicle" asp-action="AllVehicles" asp-route-page="@(ViewBag.CurrentPage + 1)">Next</a>
+            }
+        </div>
+
+
+
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var selectedCategoryId = "@Model.SelectedCategoryID";
+        var options = document.querySelectorAll('#categorySelect option');
+        
+        options.forEach(function(option) {
+            if (option.getAttribute('data-category-id') === selectedCategoryId) {
+                option.selected = true; 
+            }
+        });
+    });
+</script>

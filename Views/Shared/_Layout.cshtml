@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="~/css/_Layout.css">
+</head>
+<body>
+      <nav class="container">
+        <div class="logo"><a asp-controller="Home" asp-action="Index">-LOGO-</a></div>
+        <div>
+
+            <ul>
+                <li><a asp-controller="Cart" asp-action="MyCart">Cart</a></li>
+                 @if(User.IsInRole("Admin")){
+                    <li><a asp-controller="Vehicle" asp-action="Create">Add Product</a></li>
+                    <li><a asp-controller="Manage" asp-action="AllUsers">Manage Users</a></li>
+                }
+                @if(User.Identity!.IsAuthenticated){
+                    <li> 
+                    <a asp-controller="Vehicle" asp-action="AllVehicles">Products</a>
+                    </li>
+                
+
+                
+                <li><a asp-controller="Auth" asp-action="Logout">Log Out</a></li>
+
+                <li>
+                    <a asp-controller="Profile" asp-action="UserDetails">@User.Identity.Name</a>
+                </li>
+
+                }else{
+                <li> 
+                  <a asp-controller="Vehicle" asp-action="AllVehicles">Products</a>
+                </li>
+
+                <li>
+                    <a asp-controller="Auth" asp-action="Login">Log In</a>
+                </li>
+                }
+
+               
+            </ul>
+        </div>
+    </nav>  
+    @RenderBody()
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

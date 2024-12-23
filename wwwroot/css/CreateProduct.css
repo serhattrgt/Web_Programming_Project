@@ -1,0 +1,99 @@
+body {
+  background-color: #141418;
+  color: #f0f0f5;
+  /* margin: 0; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  margin: 5rem;
+  width: 90%; /* Ekranın %90'ını kaplar */
+  max-width: 1200px; /* Çok geniş ekranlarda maksimum genişlik */
+  background-color: #1b1e2b;
+  box-shadow: 0 0 8px #004466; /* Neon hafif yansıma */
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.form-title {
+  font-size: 1.8rem;
+  color: #00aaff; /* Farlarla uyumlu neon mavi */
+  text-shadow: 0 0 8px #0088cc; /* Hafif neon efekti */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-list {
+  display: flex;
+  gap: 20px; /* İki kolon arasındaki boşluk */
+  flex-wrap: wrap; /* Ekran daralırsa kolonlar alta geçer */
+}
+
+.form-part {
+  flex: 1; /* Kolonlar eşit genişlikte olur */
+  min-width: 300px; /* Daraldığında minimum genişlik */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+label {
+  color: #00aaff; /* Farlarla uyumlu neon mavi */
+  text-shadow: 0 0 8px #0088cc; /* Hafif neon efekti */
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+input,
+textarea,
+select {
+  font-size: 1rem;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #141418;
+  color: #f0f0f5;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  box-shadow: 0 0 8px #004466; /* Neon hafif yansıma */
+}
+
+input[type="file"] {
+  padding: 5px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #141418;
+  background-color: #00aaff;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #0088cc;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #00aaff;
+}

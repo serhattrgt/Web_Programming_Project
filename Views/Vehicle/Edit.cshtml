@@ -1,0 +1,93 @@
+@model CreateProductView 
+
+<link rel="stylesheet" href="~/css/CreateProduct.css">
+
+<div class="form-container">
+    <h1 class="form-title">Manage Product</h1>
+    <form asp-action="Edit"method="post" enctype="multipart/form-data" class="product-form">
+    <input type="hidden" asp-for="ProductID">
+    <div asp-validation-summary="ModelOnly" style="color: orangered;"></div>
+        <div class="form-list">
+        <div class="form-part">
+       
+
+        <div class="form-group">
+            <label asp-for="Brand">Brand</label>
+            <input asp-for="Brand"/>
+            <span asp-validation-for="Brand" style="color: orangered;"></span>
+
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Model">Model</label>
+            <input asp-for="Model"/>
+            <span asp-validation-for="Model" style="color: orangered;"></span>
+
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Color">Color</label>
+            <input asp-for="Color"/>
+            <span asp-validation-for="Color" style="color: orangered;"></span>
+
+        </div>
+
+        <div class="form-group">
+            <label asp-for="TopSpeed">Top Speed</label>
+            <input asp-for="TopSpeed"/>
+            <span asp-validation-for="TopSpeed" style="color: orangered;"></span>
+
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Price">Price</label>
+            <input asp-for="Price"/>
+            <span asp-validation-for="Price" style="color: orangered;"></span>
+
+        </div>
+        </div>
+
+        <div class="form-part">
+            <div class="form-group">
+            <label asp-for="StockAmount">Stock Amount</label>
+            <input asp-for="StockAmount"/>
+            <span asp-validation-for="StockAmount" style="color: orangered;"></span>
+
+        </div>
+
+        <div class="form-group">
+            <label asp-for="FuelConsume">Fuel Consume</label>
+            <input asp-for="FuelConsume"/>
+            <span asp-validation-for="FuelConsume" style="color: orangered;"></span>
+
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Description">Description</label>
+            <textarea asp-for="Description"></textarea>
+            <span asp-validation-for="Description" style="color: orangered;"></span>
+
+        </div>
+
+        <div class="form-group">
+            <label asp-for="CategoryID">Category</label>
+            <select asp-for="CategoryID">
+                <option value="1">Sport Car</option>
+                <option value="2">Electric Car</option>
+                <option value="3">Motrcycle</option>
+
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="FileName">Upload File</label>
+            <input asp-for="FileName" />
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="submit-button">Save</button>
+        </div>
+        </div>
+        </div>
+    </form>
+</div>

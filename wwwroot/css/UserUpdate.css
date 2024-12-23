@@ -1,0 +1,114 @@
+/* Genel Ayarlar */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #141418;
+  color: #f0f0f5;
+  overflow-x: hidden;
+}
+
+/* Form Kabı */
+.update-user-form {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #1b1e2b;
+  box-shadow: 0 0 8px #004466; /* Neon hafif yansıma */
+  border-radius: 15px;
+}
+
+/* Başlık */
+.update-user-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #00aaff; /* Farlarla uyumlu neon mavi */
+  text-shadow: 0 0 8px #0088cc; /* Hafif neon efekti */
+}
+
+/* Form Grup */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #00aaff; /* Farlarla uyumlu neon mavi */
+  text-shadow: 0 0 8px #0088cc; /* Hafif neon efekti */
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #444;
+  background-color: #141418;
+  color: #f0f0f5;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  box-shadow: 0 0 8px #004466; /* Neon hafif yansıma */
+}
+
+/* Textarea */
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Form Butonları */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Genel Buton */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #141418;
+  background-color: #00aaff;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none; /* Alt çizgiyi kaldır */
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #00aaff;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #00aaff;
+}
+
+/* İkincil Buton */
+.btn-secondary {
+  background-color: #2196f3; /* Mavi renk */
+}
+
+.btn-secondary:hover {
+  background-color: #64b5f6; /* Hover rengi */
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+  .update-user-form {
+    padding: 20px;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}

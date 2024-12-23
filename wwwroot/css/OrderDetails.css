@@ -1,0 +1,127 @@
+/* Genel Ayarlar */
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #141418;
+  color: #f0f0f5;
+  overflow-x: hidden;
+}
+
+/* Bölüm Tasarımı */
+section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #1b1e2b;
+  box-shadow: 0 0 8px #004466; /* Neon hafif yansıma */
+  border-radius: 15px;
+}
+
+section h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #00aaff; /* Farlarla uyumlu neon mavi */
+  text-shadow: 0 0 8px #0088cc; /* Hafif neon efekti */
+}
+
+section p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* Tablo Tasarımı */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  color: #ffffff; /* Beyaza geçiş */
+  text-shadow: 0 0 12px #00aaff; /* Neon efekti hover'da artar */
+  border-radius: 10px;
+  overflow: hidden; /* Taşan köşeler için */
+}
+
+table th,
+table td {
+  padding: 15px;
+  text-align: left;
+  color: #00aaff; /* Farlarla uyumlu neon mavi */
+  text-shadow: 0 0 8px #0088cc; /* Hafif neon efekti */
+  border-bottom: 1px solid #444;
+}
+
+table th {
+  background-color: #1b1e2b;
+  color: #00aaff; /* Farlarla uyumlu neon mavi */
+  text-shadow: 0 0 8px #0088cc; /* Hafif neon efekti */
+  font-size: 1.3rem;
+}
+
+table td {
+  font-size: 1.2rem;
+  background-color: #1b1e2b;
+}
+
+table tr:hover {
+  background-color: #292f3d; /* Biraz daha açık gri-siyah */
+}
+
+/* Linkler */
+a {
+  color: #00aaff; /* Farlarla uyumlu neon mavi */
+  text-shadow: 0 0 8px #0088cc; /* Hafif neon efekti */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Buton Kabı */
+.button-container {
+  margin-top: 20px; /* Üst boşluk */
+  text-align: center; /* Butonu ortala */
+}
+
+/* Buton Stili */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none; /* Alt çizgiyi kaldır */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-back {
+  background-color: #2196f3; /* Mavi renk */
+  color: #fff;
+}
+
+.btn-back:hover {
+  background-color: #64b5f6; /* Hover rengi */
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+  section {
+    padding: 20px;
+  }
+
+  table th,
+  table td {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  a {
+    font-size: 1rem;
+  }
+}
